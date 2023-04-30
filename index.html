@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kafe di Tulungagung - Kedai Kosim</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="img/kedai-kosim-logo.png" height="100px">
+    </div>
+    <div class="container">
+        <div class="arrow l" onclick="prev()">
+            <img src="img/l.png" alt="l">
+        </div>
+        <div class="slide slide-1">
+             <div class="caption">
+                <a href="https://wa.me/628113017555">
+                    <h3>Only 45 million IDR</h3>
+                    <p>Coffee Franchise & Coffee Business Opportunities</p>
+                </a>
+             </div>
+        </div>
+        <div class="slide slide-2">
+            <div class="caption">
+                <a href="https://wa.me/628113017555">
+                    <h3>Coffee Education</h3>
+                    <p>Learning about Specialty Coffee, Coffee Mixology & Hospitality Management</p>
+                </a>
+            </div>
+       </div>
+       <div class="slide slide-3">
+            <div class="caption">
+                <a href="https://wa.me/628113017555">
+                    <h3>Coffee Catering</h3>
+                    <p>Coffee Service for Your Special Occasions</p>
+                </a>
+            </div>
+       </div>
+       <div class="slide slide-4">
+            <div class="caption">
+                <a href="https://wa.me/628113017555">
+                    <h3>Coffee Bean Dealer</h3>
+                    <p>Indonesian Coffee Sourcing for Your Business Supply</p>
+                </a>
+            </div>
+       </div>
+       <div class="slide slide-5">
+            <div class="caption">
+                <a href="https://wa.me/628113017555">
+                    <h3>Coffee Trip</h3>
+                    <p>Coffee Travel Package</p>
+                </a>
+            </div>
+       </div>
+       <div class="arrow r" onclick="next()">
+            <img src="img/r.png" alt="r">
+        </div>
+    </div>
+    <script>
+        let slide = document.querySelectorAll('.slide');
+        var current = 0;
+
+        function cls(){
+            for(let i = 0; i < slide.length; i++){
+                  slide[i].style.display = 'none';
+            }
+        }
+
+        function next(){
+            cls();
+            if(current === slide.length-1) current = -1;
+            current++;
+
+            slide[current].style.display = 'block';
+            slide[current].style.opacity = 0.4;
+
+            var x = 0.4;
+            var intX = setInterval(function(){
+                x+=0.1;
+                slide[current].style.opacity = x;
+                if(x >= 1) {
+                    clearInterval(intX);
+                    x = 0.4;
+                }
+            }, 100);
+
+        }
+
+        function prev(){
+            cls();
+            if(current === 0) current = slide.length;
+            current--;
+
+            slide[current].style.display = 'block';
+            slide[current].style.opacity = 0.4;
+
+            var x = 0.4;
+            var intX = setInterval(function(){
+                x+=0.1;
+                slide[current].style.opacity = x;
+                if(x >= 1) {
+                    clearInterval(intX);
+                    x = 0.4;
+                }
+            }, 100);
+
+        }
+
+        function start(){
+            cls();
+            slide[current].style.display = 'block';
+        }
+        start();
+    </script>
+</body>
+</html>
