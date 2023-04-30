@@ -83,3 +83,16 @@
 .r {
     right: 0;
 }
+.klikada {
+    position: fixed;
+    left: 0;
+    top: 90%;
+    padding: 12px 24px;
+    z-index: 1;
+}
+.klikada p {
+    color: red;
+}
+.klikada putih {
+    color: white; !important
+}
